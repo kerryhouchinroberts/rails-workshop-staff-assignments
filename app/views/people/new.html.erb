@@ -4,6 +4,10 @@
 
 <%= form_for @person do |f| %>
 
+  <% if flash.now[:alert] %>
+  <%= flash.now[:alert] %>
+  <% end %>
+
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, autofocus: true, placeholder: "i.e. Dr.", class: "form-control" %>

@@ -21,6 +21,7 @@ class PeopleController < ApplicationController
     if @person.update_attributes(params.require(:person).permit(:first_name, :last_name, :title))
       redirect_to person_path(@person), notice: "Person was updated!"
     else
+      flash.now[:alert] = "Last name and Title or First Name must be present"
       render :edit
     end
   end
@@ -30,6 +31,7 @@ class PeopleController < ApplicationController
     if @person.save
       redirect_to root_path, notice: "Person was created!"
     else
+      flash.now[:alert] = "Last name and Title or First Name must be present"
       render :new
     end
   end
