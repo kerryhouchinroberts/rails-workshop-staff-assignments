@@ -17,3 +17,11 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <% @person.assignments.each do |assignment| %>
+      <td><%= assignment.location.name %></td>
+      <td><%= assignment.role %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
