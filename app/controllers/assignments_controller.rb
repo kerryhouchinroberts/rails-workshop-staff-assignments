@@ -29,7 +29,7 @@ class AssignmentsController < ApplicationController
       redirect_to person_path(@person)
     else
       flash.now[:alert] = "Please select a location and role."
-      render :new
+      render :edit
     end
   end
 
